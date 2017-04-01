@@ -1,12 +1,12 @@
-uthor by banban
+#author by banban
 echo "log monitor start at" `date`
 ExceptionLogDir="/opt/nginx/log/nginx"
 ResultDir="/opt/script/nginxlogcount/"
 DAYS1=`date +%F -d "-1 days"`
 DAYS=`date +%Y/%m/%d -d "-1 days"`
 ResultFile="${DAYS1}.txt"
-emails="chengmangmang@benlai.com"
-title="bljs_nginx_imgcount_status日志"${DAYS}
+emails="...."
+title="..."${DAYS}
 ExceptionColl(){
 cd $ResultDir
 if  [ ! -f "$ResultFile" ];then
@@ -14,7 +14,7 @@ touch "$ResultFile"
 else
 echo "$ResultFile  is exiting."
 fi
-echo "bljs img visit count"
+echo "img visit count"
 echo -e "pv" >${ResultDir}${ResultFile}
 cat "${ExceptionLogDir}/access_log_${DAYS1}.log" |wc -l >>${ResultDir}${ResultFile}
 echo -e "\n uv" >>${ResultDir}${ResultFile}
