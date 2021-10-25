@@ -16,4 +16,5 @@ Include=/etc/zabbix/zabbix_agentd.d/
 EOF
 
 
+systemctl restart zabbix-agent.service
 echo "zabbix install finish"
