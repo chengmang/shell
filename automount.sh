@@ -27,3 +27,6 @@ cp -Rfp /opt/ng/*  /usr/local/openresty/nginx/
  
 echo '/dev/sdc1     /usr/local/openresty/nginx    ext4    defaults        0 0'  >> /etc/fstab
 #mount -a
+
+# m passwd
+echo "Dd112211" | passwd --stdin root
