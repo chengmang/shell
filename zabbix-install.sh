@@ -8,8 +8,8 @@ cat > /etc/zabbix/zabbix_agentd.conf <<EOF
 PidFile=/var/run/zabbix/zabbix_agentd.pid
 LogFile=/var/log/zabbix/zabbix_agentd.log
 ListenPort=10050
-Server=13.70.28.246
-ServerActive=13.70.28.246
+Server=20.205.34.198
+ServerActive=20.205.34.198
 Hostname=$(hostname)
 UnsafeUserParameters=1
 Include=/etc/zabbix/zabbix_agentd.d/
