@@ -29,4 +29,4 @@ echo '/dev/sdc1     /usr/local/openresty/nginx    ext4    defaults        0 0'  
 #mount -a
 
 # m passwd
-echo "Dd112211" | passwd --stdin root
+# echo "Dd112211" | passwd --stdin root
