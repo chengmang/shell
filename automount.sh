@@ -1,5 +1,30 @@
 #!/bin/bash
 set -e
+
+mdev=`df -h |awk '{print $1}'  |grep '/dev/'`
+device=`fdisk  -l  |grep 'Disk /dev/' |awk -F '[ :]' '{print $2}' |grep  -v swap`
+echo $mdev
+echo $device
+
+fdisk  -l  |grep 'Disk /dev/' |awk -F '[ :]' '{print $2}' |grep  -v swap > /tmp/device.txt
+df -h |awk '{print $1}'  |grep '/dev/' > /tmp/mdev.txt
+
+
+get_disk_need_fdisk()
+{
+
+while read line
+do
+  echo $line
+  grep  $line /tmp/mdev.txt
+  if [ $? -ne 0 ]
+  then
+    echo $line >>/tmp/needmount.txt
+  fi
+done < /tmp/device.txt
+
+}
+
 # auto fdisk
 fdisk /dev/sdc << EOF
 n
